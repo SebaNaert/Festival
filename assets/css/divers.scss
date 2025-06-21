@@ -3,6 +3,7 @@ $font-moch : "Mochiy Pop One", sans-serif;
 $color1 : #FF9C62;
 $color2 : #FAF5E9;
 $color3 : #582C12;
+$color4 : #822E2E;
 
 /*Taille font Montserrat*/
 $bold : 700;
@@ -19,4 +20,15 @@ $breakpoint-desktop: 1280px;
 .slide {
     width: 100%;
     min-height: 100vh;
+}
+.wrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    .left, .right {
+        flex: 1;
+    }
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+    }
 }
