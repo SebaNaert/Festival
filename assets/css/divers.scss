@@ -1,4 +1,5 @@
 $font-Mont : "Montserrat", sans-serif;
+$font-moch : "Mochiy Pop One", sans-serif;
 $color1 : #FF9C62;
 $color2 : #FAF5E9;
 $color3 : #582C12;
@@ -14,4 +15,8 @@ $breakpoint-desktop: 1280px;
 *{
     margin: 0;
     padding: 0;
+}
+.slide {
+    width: 100%;
+    min-height: 100vh;
 }
