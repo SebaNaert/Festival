@@ -151,7 +151,7 @@
         }
     }
     @media (max-width: $breakpoint-desktop) {
-        width: 550px;
+        width: 530px;
         height: 340px;
     }
     @media (max-width: $breakpoint-tablet) {
@@ -166,8 +166,9 @@
     grid-template-columns: repeat(5, 1fr);
     margin-top: 90px;
     align-items: center;
+    text-align: left;
     p {
-        grid-column: 2/5;
+        grid-column: 2/6;
         font-family: $font-Mont;
         font-size: 15px;
         font-weight: $bold;
@@ -177,7 +178,7 @@
             display: inline;
         }
         @media (max-width: $breakpoint-desktop) {
-            grid-column: 2/6;
+            grid-column: 1/6;
         }
     }
     @media (max-width: $breakpoint-tablet) {
