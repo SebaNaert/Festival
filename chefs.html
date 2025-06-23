@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="build/css/style.css">
+    <title>Terroirs & Voyages</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="build/images/logo.png" alt="logo">
+        </div>
+        <h1 class="title">
+            Terroirs & Voyages
+        </h1>
+        <div id="navBarre">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M3.75 10.3125H36.25C36.9404 10.3125 37.5 9.75289 37.5 9.0625V5.9375C37.5 5.24711 36.9404 4.6875 36.25 4.6875H3.75C3.05961 4.6875 2.5 5.24711 2.5 5.9375V9.0625C2.5 9.75289 3.05961 10.3125 3.75 10.3125ZM3.75 22.8125H36.25C36.9404 22.8125 37.5 22.2529 37.5 21.5625V18.4375C37.5 17.7471 36.9404 17.1875 36.25 17.1875H3.75C3.05961 17.1875 2.5 17.7471 2.5 18.4375V21.5625C2.5 22.2529 3.05961 22.8125 3.75 22.8125ZM3.75 35.3125H36.25C36.9404 35.3125 37.5 34.7529 37.5 34.0625V30.9375C37.5 30.2471 36.9404 29.6875 36.25 29.6875H3.75C3.05961 29.6875 2.5 30.2471 2.5 30.9375V34.0625C2.5 34.7529 3.05961 35.3125 3.75 35.3125Z" fill="#582C12"/>
+            </svg>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Festival</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="chefs.html">Chefs</a></li>
+                <li><a href="index.html">Infos</a></li>
+                <li><a href="index.html">Galerie</a></li>
+                <li><a href="index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="slide">   
+        <div class="wrapper">
+            <div id="chefs">
+                <h1>Découvre les <span class="orange">chefs</span></h1>
+                <p><span class="orange">Chefs passionnés</span>, amoureux des <span class="orange">saveurs authentiques</span> et du <span class="orange">savoir-faire culinaire</span>. Chaque plat est une création pensée avec <span class="orange">coeur</span>, mêlant <span class="orange">tradition</span> et <span class="orange">créativité</span> pour <span class="orange">éveiller les papilles</span> et <span class="orange">raconter une histoire.</span></p>
+            </div>
+            
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+                <div class="swiper-slide"><img src="build/images/chefs1.jpg" class="chef-img" /><h3>Stéphane Buron</h3><p class="date">Date</p></div>
+                <div class="swiper-slide"><img src="build/images/chefs2.jpg" class="chef-img" /><h3>Anthony Denon</h3><p class="date">Date</p></div>
+                <div class="swiper-slide"><img src="build/images/chefs3.jpg" class="chef-img" /><h3>Danny Saint-Pierre</h3><p class="date">Date</p></div>
+                <div class="swiper-slide"><img src= "build/images/chefs4.webp" class="chef-img" /><h3>Claire Dupont</h3><p class="date">Date</p></div>
+                <div class="swiper-slide"><img src="build/images/chefs5.jfif" class="chef-img" /><h3>Julien Lefèvre</h3><p class="date">Date</p></div>
+                <div class="swiper-slide"><img src="build/images/chefs6.jpg" class="chef-img" /><h3>Amélie Fortin</h3><p class="date">Date</p></div>
+                <div class="swiper-slide"><img src="build/images/chefs1.jpg" class="chef-img" /><h3>Luc Moreau</h3><p class="date">Date</p></div>
+            </div>
+        </div>
+
+  <!-- Custom pagination with controls -->
+        <div class="custom-pagination">
+            <button class="circle-button" id="prevBtn"></button>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <button class="circle-button" id="nextBtn"></button>
+        </div>
+        
+    </div>
+      <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: false,
+            breakpoints: {
+                768: {
+                    
+                    spaceBetween: 60,
+                },
+                1280: {
+                    slidesPerView: 3,
+                    spaceBetween: 120,
+                }
+            },
+            on: {
+                slideChange: updateProgress
+            }
+        });
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressFill = document.getElementById('progressFill');
+        const totalSlides = document.querySelectorAll('.swiper-slide').length;
+
+        prevBtn.addEventListener('click', () => {
+        swiper.slidePrev();
+        });
+
+        nextBtn.addEventListener('click', () => {
+        swiper.slideNext();
+        });
+
+        function updateProgress() {
+        const currentIndex = swiper.realIndex;
+        const slidesPerView = swiper.params.slidesPerView >= 1 ? swiper.params.slidesPerView : 1;
+        const maxIndex = totalSlides - slidesPerView;
+        const percent = (currentIndex / maxIndex) * 100;
+        progressFill.style.width = percent + '%';
+        }
+
+        // Init
+        updateProgress();
+    </script>
+    <footer>
+        <div class="wrapper">
+            <p>© 2025 Sébastien Naert - Ce site web a été créé pour un projet d'école </p>
+        </div>
+    </footer>
+</body>
+</html> 
