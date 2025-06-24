@@ -1,1 +1,101 @@
 @use "./divers.scss" as *;
+
+#infos {
+    font-family: $font-Mont;
+    letter-spacing: 0.05em;
+
+    h1 {
+        height: 60px;
+        width: 720px;
+        color: $color1;
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+        margin: 60px auto;
+    }
+
+    // Nouveau conteneur flex pour les deux blocs
+    .infos-flex {
+        display: flex;
+        align-items: flex-end;
+        justify-self: center;
+        
+    }
+
+    .leftInf {
+        flex: 1;
+        position: relative;
+
+    }
+    .rightInf {
+        flex: 1;
+        position: relative;
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+        .infos-flex {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        .leftInf,
+        .rightInf {
+            width: 100%;
+            flex: none;
+        }
+        #ticket {
+            order: 1;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .txtInfos {
+            order: 2;
+            width: 100%;
+            max-width: 480px;
+            margin-bottom: 90px;
+        }
+        .trans {
+            order: 3;
+        }
+    }
+
+    #ticket {
+        margin: 0 auto 90px auto;
+    }
+    .txtInfos {
+        width: 480px;
+        height: 240px;
+        align-content: center;
+        font-weight: $bold;
+        margin-bottom: 90px;
+    }
+
+    .trans {
+        position: relative;
+        width: 570px;
+        margin-bottom: 60px;
+
+        svg {
+            position: absolute;
+            margin-top: 25px;
+        }
+        h3 {
+            margin-left: 90px;
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 24px;
+            color: #582C12;
+        }
+        ul {
+            list-style: none;
+            margin-left: 90px;
+            li {
+                font-size: 15px;
+                font-weight: $bold;
+                line-height: 24px;
+            }
+        }
+    }
+}

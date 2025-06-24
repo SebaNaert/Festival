@@ -944,4 +944,93 @@ header nav ul li:nth-child(6) {
   }
 }
 
+#infos {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.05em;
+}
+#infos h1 {
+  height: 60px;
+  width: 720px;
+  color: #FF9C62;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin: 60px auto;
+}
+#infos .infos-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-self: center;
+}
+#infos .leftInf {
+  flex: 1;
+  position: relative;
+}
+#infos .rightInf {
+  flex: 1;
+  position: relative;
+}
+@media (max-width: 1280px) {
+  #infos .infos-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  #infos .leftInf,
+  #infos .rightInf {
+    width: 100%;
+    flex: none;
+  }
+  #infos #ticket {
+    order: 1;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 480px;
+  }
+  #infos .txtInfos {
+    order: 2;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 90px;
+  }
+  #infos .trans {
+    order: 3;
+  }
+}
+#infos #ticket {
+  margin: 0 auto 90px auto;
+}
+#infos .txtInfos {
+  width: 480px;
+  height: 240px;
+  align-content: center;
+  font-weight: 700;
+  margin-bottom: 90px;
+}
+#infos .trans {
+  position: relative;
+  width: 570px;
+  margin-bottom: 60px;
+}
+#infos .trans svg {
+  position: absolute;
+  margin-top: 25px;
+}
+#infos .trans h3 {
+  margin-left: 90px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 24px;
+  color: #582C12;
+}
+#infos .trans ul {
+  list-style: none;
+  margin-left: 90px;
+}
+#infos .trans ul li {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
 /*# sourceMappingURL=style.css.map */
