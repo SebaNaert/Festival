@@ -1033,4 +1033,38 @@ header nav ul li:nth-child(6) {
   line-height: 24px;
 }
 
+#contGalerie {
+  grid-column-start: 2;
+  grid-column-end: 12;
+  background-color: #FAF5E9;
+  width: 1200px;
+  height: 750px;
+  margin: 90px auto 0 auto;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 45px 60px;
+  gap: 30px 45px;
+}
+#contGalerie .img1 {
+  filter: blur(1px);
+}
+#contGalerie .img1 img {
+  width: 330px;
+  height: 210px;
+}
+#contGalerie .img1:hover {
+  filter: blur(0px);
+}
+#contGalerie .img1:hover img {
+  transform: scale(1.2);
+}
+#contGalerie .petit {
+  align-self: center;
+}
+#contGalerie .petit img {
+  height: 180px;
+}
+
 /*# sourceMappingURL=style.css.map */
