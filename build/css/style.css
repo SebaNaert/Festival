@@ -1220,6 +1220,7 @@ header nav ul li:hover .sous-menu {
     margin: 0 auto;
   }
   #infos #ticket img {
+    width: 100%;
     height: auto;
   }
   #infos .txtInfos {
