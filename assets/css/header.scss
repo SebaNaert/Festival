@@ -13,7 +13,8 @@ header {
         align-self: start;
         margin-bottom: 30px;
         position: absolute;
-
+        opacity: 0;
+        animation: logoApparait 3s ease-in-out forwards;
         img {
         width: 120px;
         height: 120px;
@@ -169,7 +170,7 @@ header {
                 width: 100%;
                 background-color: $color2;
                 list-style: none;
-                z-index: 1000;
+                z-index: 1200;
                 li {
                     width: 100%;
                     a{
@@ -239,5 +240,14 @@ header {
 
     @media (max-width: $breakpoint-tablet) {
         height: 150px;
+    }
+}
+
+@keyframes logoApparait {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

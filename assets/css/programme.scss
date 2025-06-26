@@ -236,11 +236,14 @@
 }
 
 #programme {
-    .wrapper {
-        padding:0;
-        .left {
-            grid-column-start: 1;
-            grid-column-end: 13;
+    @media (max-width: $breakpoint-tablet) {
+        .wrapper {
+            padding:0;
+            .left {
+                grid-column-start: 1;
+                grid-column-end: 13;
+            }
         }
     }
+
 }
