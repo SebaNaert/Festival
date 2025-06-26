@@ -16,6 +16,9 @@
             text-align: center;
             
         }
+        @media (max-width: $breakpoint-tablet) {
+            font-size: 32px;
+        }
     }
     form {
         height: auto;
