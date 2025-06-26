@@ -83,23 +83,33 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: false,
+        centeredSlides: false,
+        breakpoints: {
+            0: {
             slidesPerView: 1,
-            spaceBetween: 30,
-            loop: false,
-            breakpoints: {
-                768: {
-                    
-                    spaceBetween: 60,
-                },
-                1280: {
-                    slidesPerView: 3,
-                    spaceBetween: 120,
-                }
+            centeredSlides: true,
+            spaceBetween: 20
             },
-            on: {
-                slideChange: updateProgress
+            768: {
+            slidesPerView: 3,
+            centeredSlides: false,
+            spaceBetween: 30
+            },
+            1280: {
+            slidesPerView: 3,
+            centeredSlides: false,
+            spaceBetween: 60
             }
+        },
+        on: {
+            slideChange: updateProgress
+        }
         });
+
+
 
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');

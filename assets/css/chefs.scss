@@ -40,34 +40,39 @@
     overflow: hidden;
 
     .swiper-slide {
-    background: #fff;
-    border-radius: 20px;
-    text-align: center;
-    a {
-        text-decoration: none;
-        color: #000;
-    }
-    .chef-img {
-        width: 360px;
-        height: 360px;
-        object-fit: cover;
+        background: #fff;
         border-radius: 20px;
-        margin-bottom: 30px;
-        @media(max-width: $breakpoint-desktop) {
-            width: 190px;
-            height: 190px;
+        text-align: center;
+        width: auto;
+        a {
+            text-decoration: none;
+            color: #000;
         }
-    }
-    h3 {
-        margin: 0;
-        font-size: 18px;
-        font-weight: 600;
-    }
-    .date {
-        color: #ff7f4f;
-        font-weight: 600;
-        margin-top: 15px;
-    }
+        .chef-img {
+            width: 360px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            @media(max-width: $breakpoint-desktop) {
+                width: 190px;
+                height: 190px;
+            }
+        }
+        h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .date {
+            color: #ff7f4f;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        @media(max-width: $breakpoint-desktop) {
+            width: 80%;
+            max-width: unset;
+        }
     }
     @media(max-width: $breakpoint-desktop) {
         max-width: 695px;
