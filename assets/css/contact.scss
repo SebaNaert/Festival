@@ -1,0 +1,59 @@
+@use "./divers.scss" as *;
+form {
+    padding-left: 120px;
+}
+.formu{
+    width: 480px;
+    h2 {
+        margin-top: 90px;
+        font-size: 40px;
+        font-family: $font-Mont;
+        font-weight: $bold;
+        color: $color1;
+    }
+}
+.form-group{
+    margin: 4rem 0;
+}
+
+.form-group input, .form-group textarea{
+    width: 100%;
+    padding: 0.2rem 0.4rem;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 2px solid $color1;
+    font-family: $font-Mont;
+
+}
+
+.form-group textarea{
+    height: 10rem;
+    resize: none;
+}
+input::placeholder, textarea::placeholder {
+    color: #582C12;
+    opacity: 1;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+    font-weight: $bold;
+}
+
+.btn{
+    display: block;
+    border: none;
+    border: 2px solid $color1;
+    background-color: white;
+    color: #582C12;
+    border-radius: 30px;
+    width: 210px;
+    height: 60px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: $font-Mont;
+    cursor: pointer;
+    margin: 0 auto;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+    font-weight: $bold;
+}

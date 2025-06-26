@@ -960,7 +960,9 @@ header nav ul li:nth-child(6) {
 #infos .infos-flex {
   display: flex;
   align-items: flex-end;
-  justify-self: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
 }
 #infos .leftInf {
   flex: 1;
@@ -970,35 +972,12 @@ header nav ul li:nth-child(6) {
   flex: 1;
   position: relative;
 }
-@media (max-width: 1280px) {
-  #infos .infos-flex {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-  #infos .leftInf,
-  #infos .rightInf {
-    width: 100%;
-    flex: none;
-  }
-  #infos #ticket {
-    order: 1;
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 480px;
-  }
-  #infos .txtInfos {
-    order: 2;
-    width: 100%;
-    max-width: 480px;
-    margin-bottom: 90px;
-  }
-  #infos .trans {
-    order: 3;
-  }
-}
 #infos #ticket {
   margin: 0 auto 90px auto;
+}
+#infos #ticket img {
+  width: 600px;
+  height: 240px;
 }
 #infos .txtInfos {
   width: 480px;
@@ -1006,6 +985,7 @@ header nav ul li:nth-child(6) {
   align-content: center;
   font-weight: 700;
   margin-bottom: 90px;
+  margin-left: 5%;
 }
 #infos .trans {
   position: relative;
@@ -1031,6 +1011,39 @@ header nav ul li:nth-child(6) {
   font-size: 15px;
   font-weight: 700;
   line-height: 24px;
+}
+@media (max-width: 1280px) {
+  #infos .infos-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  #infos .leftInf,
+  #infos .rightInf {
+    width: 100%;
+    flex: none;
+  }
+  #infos #ticket {
+    margin: 0 auto;
+  }
+  #infos #ticket img {
+    width: 100%;
+    height: auto;
+  }
+  #infos .txtInfos {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  #infos .trans {
+    height: 120px;
+    margin: 15px auto;
+  }
+  #infos h1 {
+    height: auto;
+    width: auto;
+    text-align: center;
+  }
 }
 
 #contGalerie {
@@ -1065,6 +1078,67 @@ header nav ul li:nth-child(6) {
 }
 #contGalerie .petit img {
   height: 180px;
+}
+
+form {
+  padding-left: 120px;
+}
+
+.formu {
+  width: 480px;
+}
+.formu h2 {
+  margin-top: 90px;
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #FF9C62;
+}
+
+.form-group {
+  margin: 4rem 0;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.2rem 0.4rem;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 2px solid #FF9C62;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-group textarea {
+  height: 10rem;
+  resize: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #582C12;
+  opacity: 1;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.btn {
+  display: block;
+  border: none;
+  border: 2px solid #FF9C62;
+  background-color: white;
+  color: #582C12;
+  border-radius: 30px;
+  width: 210px;
+  height: 60px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  margin: 0 auto;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

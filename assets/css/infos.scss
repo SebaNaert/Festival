@@ -16,10 +16,12 @@
 
     // Nouveau conteneur flex pour les deux blocs
     .infos-flex {
+        
         display: flex;
         align-items: flex-end;
-        justify-self: center;
-        
+        justify-content: center;
+        margin: 0 auto;
+        width: 80%;
     }
 
     .leftInf {
@@ -31,38 +33,13 @@
         flex: 1;
         position: relative;
     }
-
-    @media (max-width: $breakpoint-desktop) {
-        .infos-flex {
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-        }
-        .leftInf,
-        .rightInf {
-            width: 100%;
-            flex: none;
-        }
-        #ticket {
-            order: 1;
-            margin-bottom: 30px;
-            width: 100%;
-            max-width: 480px;
-        }
-
-        .txtInfos {
-            order: 2;
-            width: 100%;
-            max-width: 480px;
-            margin-bottom: 90px;
-        }
-        .trans {
-            order: 3;
-        }
-    }
-
+    
     #ticket {
         margin: 0 auto 90px auto;
+        img {
+            width: 600px;
+            height: 240px;
+        }
     }
     .txtInfos {
         width: 480px;
@@ -70,6 +47,7 @@
         align-content: center;
         font-weight: $bold;
         margin-bottom: 90px;
+        margin-left: 5%;
     }
 
     .trans {
@@ -96,6 +74,44 @@
                 font-weight: $bold;
                 line-height: 24px;
             }
+        }
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+        .infos-flex {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        .leftInf,
+        .rightInf {
+            width: 100%;
+            flex: none;
+        }
+        #ticket {
+            margin: 0 auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .txtInfos {
+            
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .trans {
+            height: 120px;
+            margin: 15px auto;
+        }
+        h1 {
+            height: auto;
+            width: auto;
+        
+            text-align: center;
+            
         }
     }
 }
