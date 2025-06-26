@@ -1,59 +1,132 @@
 @use "./divers.scss" as *;
+
 form {
     padding-left: 120px;
 }
-.formu{
+
+.formu {
     width: 480px;
+    transform: translate(200%, 0);
+    opacity: 0;
+    animation: centreVersGauche 2s forwards;
     h2 {
         margin-top: 90px;
         font-size: 40px;
         font-family: $font-Mont;
         font-weight: $bold;
         color: $color1;
+        @media (max-width: $breakpoint-desktop) {
+            text-align: center;
+            
+        }
+    }
+    form {
+        height: 600px;
+        @media (max-width: $breakpoint-desktop) {
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+    .form-group {
+        margin: 4rem 0;
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.2rem 0.4rem;
+            font-size: 1.2rem;
+            border: none;
+            border-bottom: 2px solid $color1;
+            font-family: $font-Mont;
+
+            &::placeholder {
+                color: #582C12;
+                opacity: 1;
+                font-size: 15px;
+                line-height: 24px;
+                letter-spacing: 0.06em;
+                font-weight: $bold;
+            }
+        }
+
+        textarea {
+            height: 10rem;
+            resize: none;
+        }
+    }
+    .btn {
+        display: block;
+        border: 2px solid $color1;
+        background-color: white;
+        color: #582C12;
+        border-radius: 30px;
+        width: 210px;
+        height: 60px;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-family: $font-Mont;
+        cursor: pointer;
+        margin: 0 auto;
+        line-height: 24px;
+        letter-spacing: 0.06em;
+        font-weight: $bold;
+    }
+    .contContact{
+        display: flex;
+        bottom: 0;
+        width: 150px;
+        height: 60px;
+        border: 1px solid $color1;
+        align-items: center;
+        gap: 15px;
+        justify-content: space-around;
+        a {
+            text-decoration: none;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        
+    }
+    @media (max-width: $breakpoint-desktop) {
+        margin: 0 auto;
+        transform: translate(0, 0);
+    }
+    @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+        height: auto;
     }
 }
-.form-group{
-    margin: 4rem 0;
+#imgContact{
+    width: 510px;
+    height: 570px;
+    background-image: url(../../build/images/contact1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 210px auto 150px auto;
+    @media (max-width: $breakpoint-desktop) {
+        margin: 90px auto 0 auto;
+    }
+    @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+        height: 230px;
+    }
 }
 
-.form-group input, .form-group textarea{
-    width: 100%;
-    padding: 0.2rem 0.4rem;
-    font-size: 1.2rem;
-    border: none;
-    border-bottom: 2px solid $color1;
-    font-family: $font-Mont;
-
-}
-
-.form-group textarea{
-    height: 10rem;
-    resize: none;
-}
-input::placeholder, textarea::placeholder {
-    color: #582C12;
-    opacity: 1;
-    font-size: 15px;
-    line-height: 24px;
-    letter-spacing: 0.06em;
-    font-weight: $bold;
-}
-
-.btn{
-    display: block;
-    border: none;
-    border: 2px solid $color1;
-    background-color: white;
-    color: #582C12;
-    border-radius: 30px;
-    width: 210px;
-    height: 60px;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    font-family: $font-Mont;
-    cursor: pointer;
-    margin: 0 auto;
-    line-height: 24px;
-    letter-spacing: 0.06em;
-    font-weight: $bold;
+@keyframes centreVersGauche {
+    0% {
+        transform: translate(200%, 0);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(10%, 0);
+        opacity: 1;
+    }
 }

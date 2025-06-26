@@ -81,7 +81,6 @@ header {
   background-color: #FAF5E9;
   font-family: "Montserrat", sans-serif;
   position: relative;
-  overflow: hidden;
 }
 header .logo {
   grid-column: 4;
@@ -114,7 +113,7 @@ header .logo img {
 @media (max-width: 768px) {
   header .logo {
     grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-end: 4;
     margin-bottom: 36px;
     margin-top: 24px;
   }
@@ -140,18 +139,52 @@ header .title {
   header .title {
     font-size: 30px;
     grid-column-start: 4;
-    grid-column-end: 10;
+    grid-column-end: 9;
   }
 }
-header #navBarre {
+header #burger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
   display: none;
+  margin-right: 15px;
+  z-index: 1002;
 }
 @media (max-width: 768px) {
-  header #navBarre {
+  header #burger {
     display: block;
-    grid-column: 11;
-    margin-top: 49px;
+    grid-column-start: 10;
+    top: 50px;
   }
+}
+header #burger .bar {
+  position: absolute;
+  left: 50px;
+  width: 100%;
+  height: 6px;
+  background-color: #582C12;
+  transition: 0.3s;
+}
+header #burger .bar:nth-child(1) {
+  top: 0;
+}
+header #burger .bar:nth-child(2) {
+  top: 13px;
+}
+header #burger .bar:nth-child(3) {
+  top: 26px;
+}
+header #burger.active .bar:nth-child(1) {
+  transform: rotate(45deg);
+  top: 13px;
+}
+header #burger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+header #burger.active .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 13px;
 }
 header nav {
   grid-column: 1/-1;
@@ -233,6 +266,26 @@ header nav ul li:nth-child(6) {
 @media (max-width: 768px) {
   header nav ul {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: #FAF5E9;
+    z-index: 1001;
+  }
+  header nav ul.open {
+    display: flex;
+  }
+  header nav ul li {
+    width: 100%;
+  }
+  header nav ul li a {
+    justify-content: flex-start;
+    padding: 16px 30px;
+    font-size: 15px;
+    background-color: #FAF5E9;
+    height: auto;
   }
 }
 @media (max-width: 768px) {
@@ -1086,6 +1139,9 @@ form {
 
 .formu {
   width: 480px;
+  transform: translate(200%, 0);
+  opacity: 0;
+  animation: centreVersGauche 2s forwards;
 }
 .formu h2 {
   margin-top: 90px;
@@ -1094,12 +1150,25 @@ form {
   font-weight: 700;
   color: #FF9C62;
 }
-
-.form-group {
+@media (max-width: 1280px) {
+  .formu h2 {
+    text-align: center;
+  }
+}
+.formu form {
+  height: 600px;
+}
+@media (max-width: 1280px) {
+  .formu form {
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.formu .form-group {
   margin: 4rem 0;
 }
-
-.form-group input, .form-group textarea {
+.formu .form-group input,
+.formu .form-group textarea {
   width: 100%;
   padding: 0.2rem 0.4rem;
   font-size: 1.2rem;
@@ -1107,13 +1176,8 @@ form {
   border-bottom: 2px solid #FF9C62;
   font-family: "Montserrat", sans-serif;
 }
-
-.form-group textarea {
-  height: 10rem;
-  resize: none;
-}
-
-input::placeholder, textarea::placeholder {
+.formu .form-group input::placeholder,
+.formu .form-group textarea::placeholder {
   color: #582C12;
   opacity: 1;
   font-size: 15px;
@@ -1121,10 +1185,12 @@ input::placeholder, textarea::placeholder {
   letter-spacing: 0.06em;
   font-weight: 700;
 }
-
-.btn {
+.formu .form-group textarea {
+  height: 10rem;
+  resize: none;
+}
+.formu .btn {
   display: block;
-  border: none;
   border: 2px solid #FF9C62;
   background-color: white;
   color: #582C12;
@@ -1139,6 +1205,72 @@ input::placeholder, textarea::placeholder {
   line-height: 24px;
   letter-spacing: 0.06em;
   font-weight: 700;
+}
+.formu .contContact {
+  display: flex;
+  bottom: 0;
+  width: 150px;
+  height: 60px;
+  border: 1px solid #FF9C62;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-around;
+}
+.formu .contContact a {
+  text-decoration: none;
+}
+.formu .contContact a img {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 1280px) {
+  .formu {
+    margin: 0 auto;
+    transform: translate(0, 0);
+  }
+}
+@media (max-width: 768px) {
+  .formu {
+    width: 100%;
+    height: auto;
+  }
+}
+
+#imgContact {
+  width: 510px;
+  height: 570px;
+  background-image: url(../../build/images/contact1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 210px auto 150px auto;
+}
+@media (max-width: 1280px) {
+  #imgContact {
+    margin: 90px auto 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  #imgContact {
+    width: 100%;
+    height: 230px;
+  }
+}
+
+@keyframes centreVersGauche {
+  0% {
+    transform: translate(200%, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(10%, 0);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

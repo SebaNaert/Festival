@@ -1,4 +1,5 @@
 @use "./divers.scss" as *;
+
 header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -6,35 +7,41 @@ header {
     background-color: $color2;
     font-family: $font-Mont;
     position: relative;
-    overflow: hidden;
+
     .logo {
         grid-column: 4;
         align-self: start;
         margin-bottom: 30px;
         position: absolute;
+
         img {
-            width: 120px;
-            height: 120px;
-            @media (max-width: $breakpoint-desktop) {
-                width: 100px;
-                height: 100px;
-            }
-            @media (max-width: $breakpoint-tablet) {
+        width: 120px;
+        height: 120px;
+
+        @media (max-width: $breakpoint-desktop) {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media (max-width: $breakpoint-tablet) {
             width: 80px;
             height: 80px;
-            }
         }
+        }
+
         @media (max-width: $breakpoint-desktop) {
-            grid-column: 2;
-            margin-top: 20px;
+        grid-column: 2;
+        margin-top: 20px;
         }
+
         @media (max-width: $breakpoint-tablet) {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            margin-bottom: 36px;
-            margin-top: 24px;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        margin-bottom: 36px;
+        margin-top: 24px;
         }
     }
+
     .title {
         grid-column-start: 5;
         grid-column-end: 12;
@@ -43,81 +50,161 @@ header {
         font-weight: $Extra-bold;
         color: $color1;
         font-size: 48px;
+
         @media (max-width: $breakpoint-desktop) {
-            grid-column-start: 3;
-            grid-column-end: 12;
-            text-align: center;
-            align-self: center;
+        grid-column-start: 3;
+        grid-column-end: 12;
+        text-align: center;
+        align-self: center;
         }
+
         @media (max-width: $breakpoint-tablet) {
-            font-size: 30px;
-            grid-column-start: 4;
-            grid-column-end: 10;
+        font-size: 30px;
+        grid-column-start: 4;
+        grid-column-end: 9;
         }
     }
-    #navBarre {
+
+    #burger {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
         display: none;
+        margin-right: 15px;
+        z-index: 1002;
+
         @media (max-width: $breakpoint-tablet) {
-            display: block;
-            grid-column: 11;
-            margin-top: 49px;
+        display: block;
+        grid-column-start: 10;
+        top: 50px;
+        }
+
+        .bar {
+        position: absolute;
+        left: 50px;
+        
+        width: 100%;
+        height: 6px;
+        background-color: #582C12;
+        transition: 0.3s;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 13px;
+            }
+
+            &:nth-child(3) {
+                top: 26px;
+            }
+        }
+
+        &.active {
+            .bar:nth-child(1) {
+                transform: rotate(45deg);
+                top: 13px;
+            }
+
+            .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .bar:nth-child(3) {
+                transform: rotate(-45deg);
+                top: 13px;
+            }
         }
     }
-    
+
     nav {
         grid-column: 1 / -1;
         align-items: center;
         align-self: self-end;
+
         ul {
-            list-style: none;
-            height: 60px;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            li {
-                height: 100%;
-                a {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    width: 100%;
-                    text-decoration: none;
-                    color: $color3;
-                    font-weight: $bold;
-                    font-size: 15px;
-                    letter-spacing: 0.05em;
-                    &.active {
-                        background-color: $color3;
-                        color: $color2;
-                    }
-                    &:hover {
-                        background-color: $color3;
-                        color: $color2;
-                    }
-                }
-                &:nth-child(1) { grid-column: 4; }
-                &:nth-child(2) { grid-column: 5; }
-                &:nth-child(3) { grid-column: 6; }
-                &:nth-child(4) { grid-column: 7; }
-                &:nth-child(5) { grid-column: 8; }
-                &:nth-child(6) { grid-column: 9; }
-                @media (max-width: $breakpoint-desktop) {
-                    &:nth-child(1) { grid-column: 1; }
-                    &:nth-child(2) { grid-column: 2; }
-                    &:nth-child(3) { grid-column: 3; }
-                    &:nth-child(4) { grid-column: 4; }
-                    &:nth-child(5) { grid-column: 5; }
-                    &:nth-child(6) { grid-column: 6; }
-                }
+        list-style: none;
+        height: 60px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        li {
+            height: 100%;
+            a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            text-decoration: none;
+            color: $color3;
+            font-weight: $bold;
+            font-size: 15px;
+            letter-spacing: 0.05em;
+
+            &.active {
+                background-color: $color3;
+                color: $color2;
             }
+
+            &:hover {
+                background-color: $color3;
+                color: $color2;
+            }
+            }
+
+            &:nth-child(1) { grid-column: 4; }
+            &:nth-child(2) { grid-column: 5; }
+            &:nth-child(3) { grid-column: 6; }
+            &:nth-child(4) { grid-column: 7; }
+            &:nth-child(5) { grid-column: 8; }
+            &:nth-child(6) { grid-column: 9; }
+
             @media (max-width: $breakpoint-desktop) {
-                grid-template-columns: repeat(6, 1fr);
-            }
-            @media (max-width: $breakpoint-tablet) {
-                display: none;
+            &:nth-child(1) { grid-column: 1; }
+            &:nth-child(2) { grid-column: 2; }
+            &:nth-child(3) { grid-column: 3; }
+            &:nth-child(4) { grid-column: 4; }
+            &:nth-child(5) { grid-column: 5; }
+            &:nth-child(6) { grid-column: 6; }
             }
         }
+
+        @media (max-width: $breakpoint-desktop) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100vw;
+            background: $color2;
+            z-index: 1001;
+
+            &.open {
+                display: flex;
+            }
+
+            li {
+                width: 100%;
+
+                a {
+                    justify-content: flex-start;
+                    padding:16px 30px;
+                    font-size: 15px;
+                    background-color: $color2;
+                    height: auto;
+                }
+            }
+        }
+        }
     }
+
     @media (max-width: $breakpoint-tablet) {
         height: 150px;
     }
