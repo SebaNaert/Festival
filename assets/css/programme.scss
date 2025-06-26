@@ -234,3 +234,13 @@
         margin: 120px auto 0 auto;
     }
 }
+
+#programme {
+    .wrapper {
+        padding:0;
+        .left {
+            grid-column-start: 1;
+            grid-column-end: 13;
+        }
+    }
+}

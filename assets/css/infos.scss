@@ -60,7 +60,8 @@
             margin-top: 25px;
         }
         h3 {
-            margin-left: 90px;
+            margin-left: 60px;
+            
             font-size: 24px;
             font-weight: 900;
             line-height: 24px;
@@ -68,7 +69,7 @@
         }
         ul {
             list-style: none;
-            margin-left: 90px;
+            margin-left: 60px;
             li {
                 font-size: 15px;
                 font-weight: $bold;
@@ -76,8 +77,9 @@
             }
         }
     }
-
-    @media (max-width: $breakpoint-desktop) {
+}
+@media (max-width: $breakpoint-desktop) {
+    #infos {
         .infos-flex {
             flex-direction: column;
             align-items: center;
@@ -104,14 +106,14 @@
         }
         .trans {
             height: 120px;
-            margin: 15px auto;
+            width: 100%;
+            max-width: 480px;
+            margin: 60px auto;
         }
         h1 {
             height: auto;
             width: auto;
-        
             text-align: center;
-            
         }
     }
 }

@@ -36,3 +36,31 @@
             }
         }
 } 
+
+@media screen and (max-width: $breakpoint-desktop) {
+    #contGalerie {
+        width: 90%;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        padding: 30px;
+        gap: 20px;
+        .img1 img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+    #contGalerie {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .img1 img, .petit img {
+        width: 100%;
+        height: auto;
+    }
+}

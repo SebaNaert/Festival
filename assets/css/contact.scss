@@ -21,7 +21,7 @@ form {
         }
     }
     form {
-        height: 600px;
+        height: auto;
         @media (max-width: $breakpoint-desktop) {
             margin: 0 auto;
             padding: 0;
@@ -78,6 +78,7 @@ form {
         height: 60px;
         border: 1px solid $color1;
         align-items: center;
+        margin: 30px 0;
         gap: 15px;
         justify-content: space-around;
         a {
@@ -98,22 +99,41 @@ form {
         height: auto;
     }
 }
-#imgContact{
-    width: 510px;
-    height: 570px;
-    background-image: url(../../build/images/contact1.jpg);
+#imgContact, #imgContact2, #imgContact3{
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 210px auto 150px auto;
+    margin: 90px auto;
     @media (max-width: $breakpoint-desktop) {
-        margin: 90px auto 0 auto;
+        margin: 90px auto;
     }
     @media (max-width: $breakpoint-tablet) {
         width: 100%;
         height: 230px;
+        margin-bottom: 0;
     }
 }
+#imgContact{
+    background-image: url(../../build/images/contact1.jpg);
+        width: 510px;
+        height: 570px; 
+}
+#imgContact2{
+    background-image: url(../../build/images/contact2.jpg);
+        width: 510px;
+        height: 420px; 
+}
+#imgContact3{
+    background-image: url(../../build/images/contact3.jpg);
+        width: 510px;
+        height: 420px; 
+}
+@media (max-width: $breakpoint-tablet) {
+    #imgContact, #imgContact2, #imgContact3{
+        width: 100%;
+        height: 230px;
+    }
 
+}
 @keyframes centreVersGauche {
     0% {
         transform: translate(200%, 0);

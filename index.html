@@ -11,7 +11,9 @@
 <body>
     <header>
         <div class="logo">
-            <img src="build/images/logo.png" alt="logo">
+            <a href="index.html">
+                <img src="build/images/logo.png" alt="logo">
+            </a>
         </div>
         <h1 class="title">
             Terroirs & Voyages
@@ -28,7 +30,11 @@
                 <li><a href="chefs.html">Chefs</a></li>
                 <li><a href="infos.html">Infos</a></li>
                 <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a>
+                    <ul class="sous-menu">
+                        <li><a href="contactExposant.html">Exposant</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -40,10 +46,10 @@
                     <div class="part1">Du 11/07/2025 au 13/07/2025</div>
                     À Tour & Taxis
                 </div>
-                <div class="btnFestival"><a href="#">En savoir plus</a></div>
+                <div class="btnFestival"><a href="#festi">En savoir plus</a></div>
             </div>
         </div>
-        <div class="wrapper">
+        <div class="wrapper" id="festi">
             <div class="left">
                 <div class="containerFestival">
                     <div class="contFestival"></div>
